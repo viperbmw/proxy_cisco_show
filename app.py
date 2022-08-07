@@ -3,8 +3,8 @@ from netmiko import ConnectHandler
 import re,sys,os
 import requests
 from flask import *
-#templates = os.path.dirname(os.path.abspath(__file__)) + '/ntc-templates/ntc_templates/templates'
-#os.environ['NET_TEXTFSM']= templates
+templates = os.path.dirname(os.path.abspath(__file__)) + '/ntc-templates/ntc_templates/templates'
+os.environ['NET_TEXTFSM']= templates
 
 ########################
 app = Flask(__name__)
