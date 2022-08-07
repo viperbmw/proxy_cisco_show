@@ -24,6 +24,7 @@ def show_mac_addr():
     user = request.args.get('user', 'autobot')
     passwd = request.args.get('passwd', 'WSX@#$rdx567-Prime')
     net_connect=ConnectHandler(device_type=os, ip=IP, username=user, password=passwd)
+    net_connect.send_command("term len 0")
     showmac=net_connect.send_command("show mac address-table",use_textfsm=True)
     return(showmac)
 
