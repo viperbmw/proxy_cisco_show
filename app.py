@@ -6,7 +6,7 @@ from flask import *
 
 ########################
 app = Flask(__name__)
-
+app.debug = True
 @app.route('/show_ip_arp')
 def show_ip_arp():
     IP = request.args.get('IP', None)
