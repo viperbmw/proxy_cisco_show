@@ -11,8 +11,8 @@ app.debug = True
 def show_ip_arp():
     IP = request.args.get('IP', None)
     os = request.args.get('os', 'cisco_ios')
-    user = request.args.get('user', 'autobot')
-    passwd = request.args.get('passwd', 'WSX@#$rdx567-Prime')
+    user = request.args.get('user', 'cisco')
+    passwd = request.args.get('passwd', 'cisco')
     net_connect=ConnectHandler(device_type=os, ip=IP, username=user, password=passwd)
     showarp=net_connect.send_command("show ip arp",use_textfsm=True)
     return(showarp)
