@@ -21,8 +21,8 @@ def show_ip_arp():
 def show_mac_addr():
     IP = request.args.get('IP', None)
     os = request.args.get('os', 'cisco_ios')
-    user = request.args.get('user', 'autobot')
-    passwd = request.args.get('passwd', 'WSX@#$rdx567-Prime')
+    user = request.args.get('user', 'cisco')
+    passwd = request.args.get('passwd', 'cisco')
     net_connect=ConnectHandler(device_type=os, ip=IP, username=user, password=passwd)
     net_connect.send_command("term len 0")
     showmac=net_connect.send_command("show mac address-table",use_textfsm=True)
